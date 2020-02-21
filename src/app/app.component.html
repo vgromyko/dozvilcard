@@ -1,0 +1,21 @@
+<div>
+    <div class="topdiv">
+        <span style="cursor:pointer;" (click)="logout()">{{lginlgout}}</span>
+    </div>
+    <app-nav></app-nav>
+
+</div>
+
+<div class="logindiv">
+    <div style="display: block; margin-top: 30px;" *ngIf="isLogin">
+        <app-login (loginDataChange)="loginData=$event;lginlgout='Logout'" (tokenChange)=" token=$event;isLogin=false;isCreate=false;isGrid=true; " (isCreateChange)="isCreate=true;isLogin=false; "></app-login>
+    </div>
+    <div style="display: contents " *ngIf="isCreate ">
+        <app-account (isLoginChange)="isLogin=true;isCreate=false;isGrid=false;lginlgout='Logout' ; "></app-account>
+    </div>
+</div>
+
+
+<div *ngIf="isGrid ">
+    <router-outlet></router-outlet>
+</div>

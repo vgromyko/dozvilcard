@@ -1,0 +1,5 @@
+<nav class="nav">
+    <div><b><a class="navelement" href="#">{{title}}</a></b></div>
+    <div class="navelement" *ngFor="let navRow of navData ; let i = index ;" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" style="text-decoration: none;" routerLink="{{navRow.url}}">{{navRow.name}}</a></div>
+
+</nav>

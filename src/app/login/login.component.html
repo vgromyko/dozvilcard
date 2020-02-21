@@ -1,0 +1,35 @@
+<jqxExpander #loginForm id='loginForm' [theme]="theme" [showArrow]="false" [toggleMode]="'none'" [width]="300" style=" margin-right: 17px;">
+    <div>
+        Entrance to System
+    </div>
+    <div style="font-family: Verdana; font-size: 13px;">
+        <jqxValidator #loginValidatorReference (onValidationSuccess)="validationSuccess($event)" [rules]="rules" [hintType]="'label'">
+            <table style="margin:5px;">
+                <tr>
+                    <td>
+                        Login
+                    </td>
+                    <td>
+                        <jqxInput #mylogin id="mylogin" [width]="180" [height]="21" [theme]="theme"></jqxInput>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password
+                    </td>
+                    <td>
+                        <jqxPasswordInput #password id="password" [theme]="theme" [width]="180" [height]="21"></jqxPasswordInput>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="margin:10px 0;">
+                        <jqxButton #lgnbutton [theme]="theme" [width]="100" (onClick)="buttonClicked()">Login</jqxButton>
+                        &nbsp;&nbsp;
+                        <a (click)="createAccountClicked()">Create Account</a>
+                    </td>
+                </tr>
+            </table>
+
+        </jqxValidator>
+    </div>
+</jqxExpander>

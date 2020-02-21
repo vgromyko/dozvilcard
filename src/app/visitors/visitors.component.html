@@ -1,0 +1,65 @@
+<jqxGrid #myGrid (onContextmenu)="myGridOnContextMenu()" (onRowclick)="myGridOnRowClick($event)" [theme]="theme" [width]="850" [source]="dataAdapter" [columns]="columns" [pageable]="true" [sortable]="true" [filterable]="true" [autoshowfiltericon]="true"
+    [updatefilterconditions]="updatefilterconditions" [editable]="false" [autoshowloadelement]="true" [selectionmode]="'multiplecellsadvanced'" [autoheight]="true" [altrows]="true" [enabletooltips]="true" [sorttogglestates]="sorttogglestates" style="margin-left:15px;margin-top: 30px;">
+</jqxGrid>
+
+<jqxWindow #myWindow [theme]="theme" [width]="280" [height]="250" [modalOpacity]="'0.01'" [resizable]="false" [isModal]="true" [autoOpen]="false">
+    <div>Edit Rov</div>
+    <div style="overflow: hidden">
+        <table>
+            <tbody>
+                <tr>
+                    <td align='right'>Login:</td>
+                    <td align='left'>
+                        <jqxInput #mylogin [theme]="theme" [width]="170" [height]="23"></jqxInput>
+                    </td>
+                </tr>
+                <tr>
+                    <td align='right'>First Name:</td>
+                    <td align='left'>
+                        <jqxInput #myfname [theme]="theme" [width]="170" [height]="23"></jqxInput>
+                    </td>
+                </tr>
+                <tr>
+                    <td align='right'>Last Name:</td>
+                    <td align='left'>
+                        <jqxInput #mylname [theme]="theme" [width]="170" [height]="23"></jqxInput>
+                    </td>
+                </tr>
+                <tr>
+                    <td align='right'>Active:</td>
+                    <td align='left'>
+                        <jqxCheckBox #myactive [theme]="theme" [height]="23"></jqxCheckBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td align='right'>E-mail:</td>
+                    <td align='left'>
+                        <jqxInput #myemail [theme]="theme" [width]="170" [height]="23"></jqxInput>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align='right'>Phone:</td>
+                    <td align='left'>
+                        <jqxMaskedInput #myphone [theme]="theme" [mask]="'(000)000-000000'" [width]="170" [height]="23"></jqxMaskedInput>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align='right'></td>
+                    <td style="padding-top: 10px" align='right'>
+                        <jqxButton #SaveBtn [theme]="theme" style="margin-right: 5px; float: left" (onClick)="SaveBtnOnClick()">Save</jqxButton>
+                        <jqxButton #CancelBtn [theme]="theme" style="float: left" (onClick)="CancelBtnOnClick()">Cancel</jqxButton>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</jqxWindow>
+<jqxMenu #myMenu [theme]="theme" (onItemclick)="myMenuOnItemClick($event)" [width]="200" [height]="80" [mode]="'popup'" [autoOpenPopup]="false">
+    <ul>
+        <li>Add New Row</li>
+        <li>Edit Selected Row</li>
+        <li>Delete Selected Row</li>
+    </ul>
+</jqxMenu>

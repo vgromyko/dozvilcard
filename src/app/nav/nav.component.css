@@ -1,0 +1,22 @@
+.navbar-nav .nav-link {
+    padding: 1px 5px;
+}
+
+.nav {
+    width: 380px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    display: flex;
+    position: absolute;
+}
+
+.navelement {
+    text-decoration: none;
+    float: left;
+    margin-left: 15px;
+    color: black;
+}
+
+.active {
+    font-weight: bold;
+}
